@@ -792,6 +792,11 @@
       <p style="margin-top:10px">Chaque projet me fait grandir et m'emmène un peu plus loin. Je vois des choses différentes, j'apprends des patterns et des concepts d'architecture, et je les réutilise sur les projets suivants.</p>
     </div>
     <div class="card tilt reveal" style="margin-bottom:18px">
+      <div class="icon">🎯</div>
+      <h3>L'IT au service du métier</h3>
+      <p>Chez BNP Paribas comme chez Safran, ce n'est pas l'IT qui fait le chiffre d'affaires : ce sont les banquiers, les traders, les opérateurs de production. Mon rôle est de leur donner des systèmes fiables et sûrs, pour qu'ils se concentrent sur ce qui crée la valeur. Une architecture réussie, c'est d'abord un métier qui avance.</p>
+    </div>
+    <div class="card tilt reveal" style="margin-bottom:18px">
       <div class="icon">🤝</div>
       <h3>La culture des grands groupes</h3>
       <p>J'ai l'habitude de travailler en équipe dans de grands groupes. J'y ai croisé beaucoup de profils différents, et je connais le rôle, l'importance et les limites de chacun.</p>
@@ -2420,6 +2425,27 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
       wheel.rotation.z = -t * .8;
     });
     say(g, 2.1, '🏦 Application bancaire sécurisée : chaque conteneur passe le pipeline CI/CD (tests, SAST, SCA) avant Kubernetes, sous l’œil de Wazuh, Prometheus et Grafana.', { card: ['projets', 'Application bancaire sécurisée'] });
+  }
+
+  // --- Pro : l'IT au service du métier, une balance ---
+  {
+    const g = group(-25.2, 10.2);
+    mesh(new THREE.CylinderGeometry(.5, .6, .3, 24), M.dark, 0, .15, 0, g);
+    mesh(new THREE.CylinderGeometry(.06, .08, 1.8, 10), M.metal, 0, 1.2, 0, g);
+    const beam = new THREE.Group(); beam.position.y = 2.1; g.add(beam);
+    mesh(new THREE.BoxGeometry(2.2, .07, .07), M.metal, 0, 0, 0, beam);
+    mesh(new THREE.SphereGeometry(.1, 12, 12), glowMat(0xfacc15, 2.5), 0, .08, 0, beam);
+    const pans = [-1, 1].map(sd => {
+      const pan = new THREE.Group(); pan.position.x = sd * 1.05; beam.add(pan);
+      for (const z of [-.15, .15]) mesh(new THREE.CylinderGeometry(.01, .01, .55, 4), M.dark, 0, -.28, z, pan);
+      mesh(new THREE.CylinderGeometry(.35, .3, .05, 24), M.metal, 0, -.56, 0, pan);
+      return pan;
+    });
+    // À gauche l'IT (un serveur), à droite le métier (des pièces) : c'est le métier qui pèse
+    mesh(new RoundedBoxGeometry(.32, .26, .26, 2, .04), glowMat(0x22d3ee, 1.6), 0, -.4, 0, pans[0]);
+    for (let k = 0; k < 4; k++) mesh(new THREE.CylinderGeometry(.13, .13, .05, 20), std({ color: 0xf5c542, metalness: 1, roughness: .25 }), (k % 2) * .08 - .04, -.5 + k * .055, (k % 3) * .04 - .04, pans[1]);
+    anims.push(t => { beam.rotation.z = -.12 + Math.sin(t * .8) * .04; pans.forEach(p => { p.rotation.z = -beam.rotation.z; }); });
+    say(g, 2.6, '⚖️ L’IT au service du métier : ce sont les banquiers, les traders, les opérateurs qui créent la valeur. Mon rôle, c’est de leur donner des systèmes fiables et sûrs.', { card: ['pro', 'L\'IT au service du métier'] });
   }
 
   // ================= Le plan de la ville : arches, lumières de quartier, place centrale =================
