@@ -1013,7 +1013,7 @@
       <div class="card tilt"><div class="icon">🎬</div><h3>Films &amp; séries</h3><p>Mon film préféré : <b>Le Seigneur des Anneaux</b>. « Un anneau pour les gouverner tous »… au fond, c'est un problème d'IAM mal conçu. 💍</p><p style="margin-top:8px">Côté séries : Breaking Bad et Game of Thrones. Je déteste Joffrey. Et contrairement à Jon Snow, je ne « know » pas « nothing » : la preuve, <a href="#pro" style="color:var(--accent-2)">mes compétences</a>. 🐺</p><span class="tag">Le Seigneur des Anneaux</span><span class="tag">Breaking Bad</span><span class="tag">Game of Thrones</span></div>
       <div class="card tilt"><div class="icon">🐉</div><h3>Animés</h3><p>Mon préféré, et de loin : <b>Dragon Ball Z</b>. Pour le reste, je suis plutôt mainstream, et je l'assume.</p><span class="tag">Dragon Ball Z</span><span class="tag">L'Attaque des Titans</span><span class="tag">Naruto</span><span class="tag">Jujutsu Kaisen</span></div>
       <div class="card tilt"><div class="icon">✈️</div><h3>6 mois en Asie</h3><p>Autour de mes quatre mois de cours à Kuala Lumpur, j'ai fait le tour de l'Asie du Sud-Est : 8 pays en 6 mois. Et ailleurs : les États-Unis et l'Europe.</p><span class="tag"><span class="fi fi-my"></span> Malaisie</span><span class="tag"><span class="fi fi-id"></span> Indonésie</span><span class="tag"><span class="fi fi-ph"></span> Philippines</span><span class="tag"><span class="fi fi-th"></span> Thaïlande</span><span class="tag"><span class="fi fi-vn"></span> Vietnam</span><span class="tag"><span class="fi fi-kh"></span> Cambodge</span><span class="tag"><span class="fi fi-mv"></span> Maldives</span><span class="tag"><span class="fi fi-sg"></span> Singapour</span></div>
-      <div class="card tilt fun" id="racines"><div class="icon"><span class="fi fi-pt"></span> <span class="fi fi-dz"></span></div><h3>Mes racines</h3><p>Des origines portugaises et algériennes : deux cultures qui font partie de moi. Et une grande famille : je suis le grand frère de quatre petites sœurs.</p><p style="margin-top:8px"><span class="fi fi-pt"></span> Côté portugais : je connais au moins douze recettes de morue, et j'ai forcément un cousin dans le BTP.</p><p style="margin-top:6px"><span class="fi fi-dz"></span> Côté algérien : le pain ne manque jamais à table. On le trempe dans l'huile d'olive de la famille, forcément la meilleure du monde, puisqu'elle vient de nos propres oliviers.</p><p style="margin-top:6px">Résultat : un régime méditerranéen parfaitement équilibré. De la morue, du pain, de l'huile d'olive… et encore du pain. 🥖🫒</p></div>
+      <div class="card tilt fun" id="racines"><div class="icon"><span class="fi fi-pt"></span> <span class="fi fi-dz"></span></div><h3>Mes racines</h3><p>Des origines portugaises et algériennes : deux cultures qui font partie de moi. Et une grande famille : je suis le grand frère de quatre petites sœurs.</p><p style="margin-top:8px"><span class="fi fi-pt"></span> Côté portugais : je connais au moins douze recettes de morue, et j'ai forcément un cousin dans le BTP.</p><p style="margin-top:6px"><span class="fi fi-dz"></span> Côté algérien : le pain ne manque jamais à table.</p><p style="margin-top:6px">Résultat : un régime méditerranéen parfaitement équilibré. De la morue, du pain… et encore du pain. 🥖</p></div>
       <div class="card tilt"><div class="icon">🛠️</div><h3>Side-projects</h3><p>Des applis perso pour tester ce que j'apprends. Ce site en fait partie.</p></div>    </div>
   </section>
 
@@ -1369,7 +1369,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
     mesh(roofGeo, std({ color: 0x7a3e2e, roughness: .75 }), 0, 2.4, 0, g);
     mesh(new THREE.BoxGeometry(.45, 1.2, .45), std({ color: 0x8a5a48, roughness: .8 }), 1.2, 3.5, -.6, g);
     for (const [x, z, w, d] of [[-3.2, 2.6, .3, 4], [3.6, 2.6, .3, 4], [0, 4.6, 7, .3]]) mesh(new THREE.BoxGeometry(w, .5, d), M.leaf2, x, .25, z, g);
-    // L'olivier de la famille
+    // Un arbre dans le jardin
     const olive = new THREE.Group(); olive.position.set(2.6, 0, 2.6); g.add(olive);
     const tr = mesh(new THREE.CylinderGeometry(.12, .2, 1.3, 8), M.trunk, 0, .65, 0, olive); tr.rotation.z = .15;
     const oliveLeaf = std({ color: 0x7d8b62, roughness: .8, flatShading: true });
@@ -2506,7 +2506,6 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
     { obj: lab.chip, y: 2.4, text: "🔬 Derrière le cloud et l'IA, il y a du silicium. CPU : peu de cœurs, très polyvalents. GPU : des milliers de petits cœurs qui calculent en parallèle." },
     { obj: lab.chess, y: 2.2, text: () => '♟️ ' + document.getElementById('chess-mood').textContent },
     { obj: lab.arcade, y: 2.5, text: "🕹️ Street Fighter, avec Blanka. Je débute : c'est surtout moi qui prends les décharges. (Psst : tape « blanka ».)" },
-    { obj: house.olive, y: 2.6, text: "🫒 L'huile d'olive de la famille. Forcément la meilleure du monde : elle vient de nos propres oliviers." },
     { obj: bakery.g, y: 3.8, text: '🥖 Je mange du pain à chaque repas. Chaque. Repas. Encore une baguette ?', tap: clickRacines },
     { obj: city.g, y: city.height, text: '☁️ La ville-cloud : 3 régions, 3 zones de disponibilité chacune. Si us-east-1 tombe, on bascule. (Essaie de taper « us-east-1 ».)' },
     { obj: parked[0], y: 1.6, marker: false, text: "✈️ Depuis avril 2026, architecte SI chez Safran. Un poste qu'on confie rarement si jeune : j'en mesure la chance." },
@@ -2517,7 +2516,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
     ...extra
   ];
   const cardOf = [
-    ['🔬', 'perso', 'Ma fascination'], ['🕹️', 'perso', 'Street Fighter'], ['🫒', 'perso', 'Mes racines'], ['🥖', 'perso', 'Mes racines'],
+    ['🔬', 'perso', 'Ma fascination'], ['🕹️', 'perso', 'Street Fighter'], ['🥖', 'perso', 'Mes racines'],
     ['☁️ La ville-cloud', 'pro', 'Compétences'], ['✈️ Depuis', 'pro', 'Architecte du système'], ['🛬', 'pro', 'Certifications'],
     ['⛷️', 'sport', 'Ski'], ['❄️', 'perso', 'Films'], ['🎾', 'sport', 'Tennis'], ['🏊', 'sport', 'Triathlon'], ['🥋 Jiu', 'sport', 'Jiu-jitsu'],
     ['🥊 Un an', 'sport', 'Boxe'], ['🇫🇷', 'moi', 'Une tech souveraine'], ['✈️ Six mois', 'perso', '6 mois en Asie'], ['🧭 Urbanisation DNS', 'projets', 'Urbanisation DNS'], ['🤖 Une chaîne', 'projets', 'Traitement de données'], ['🧠 Une infrastructure', 'projets', "Infrastructure pour l'IA"],
@@ -3298,7 +3297,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
     ['.cr7:not(.mbappe)', ['SIUUU', '🐐', '⚽'], 'SIUUUUU ! 🐐'],
     ['.mbappe', ['⚡', '💨', '⚽'], 'Trop rapide pour la photo. ⚡'],
     ['.nemour', ['🤸‍♀️', '🥇', '✨'], 'Mes sœurs approuvent ce choix. 🤸‍♀️'],
-    ['#racines', ['🥖', '🫒', '🐟'], 'Morue, pain, huile d\'olive. Et encore du pain. 🥖'],
+    ['#racines', ['🥖', '🐟', '🥖'], 'Morue, pain. Et encore du pain. 🥖'],
   ];
   funCards.forEach(([sel, items, msg]) => document.querySelector(sel)?.addEventListener('click', e => {
     burst(e.clientX, e.clientY, items); toast(msg);
@@ -3551,7 +3550,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
       document.body.appendChild(b);
       setTimeout(() => b.remove(), 4500);
     }
-    setTimeout(() => toast('Il pleut du pain. Le paradis existe. 🥖'), 400);
+    setTimeout(() => toast('Il pleut du pain. 🥖'), 400);
     found('pain');
   });
 
