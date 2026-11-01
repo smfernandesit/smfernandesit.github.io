@@ -807,10 +807,17 @@
       </div>
       <p style="margin-top:16px">Au-delà du security by design, j'ai la culture de l'industrialisation de l'IT : les réflexes CI/CD, les processus, les environnements. Et je sais que les mêmes équipes existent presque partout : sécurité, réseau, production… Dans une nouvelle organisation, je ne me demande pas si le bon interlocuteur existe, seulement qui il est.</p>
     </div>
-    <div class="two reveal">
-      <div class="card tilt"><div class="icon">🧭</div><h3>Le cloud n'est pas un datacenter déplacé</h3><p>On recopie souvent l'urbanisation on-prem telle quelle dans le cloud. Pourtant, chez AWS, l'identité et le réseau forment deux plans orthogonaux, ce qui n'existe pas (ou peu) on-prem. Ça demande une autre façon de penser : c'est sur quoi je travaille.</p></div>
-      <div class="card tilt"><div class="icon">☁️</div><h3>Connaître tous les clouds</h3><p>Aujourd'hui, AWS est l'hyperscaler le plus complet, et c'est mon socle. Mais les acteurs français comme Clever Cloud ou OVHcloud méritent d'être soutenus pour grandir. Et Azure et GCP, j'ai envie de les découvrir aussi.</p></div>
+    <div class="card tilt reveal" style="margin-bottom:18px">
+      <div class="icon">🧭</div><h3>Le cloud n'est pas un datacenter déplacé</h3>
+      <p>L'erreur classique : recopier l'on-prem tel quel dans le cloud, avec les mêmes VM et la même urbanisation. On paie alors le cloud sans en tirer les bénéfices. Or presque tout change :</p>
+      <p style="margin-top:8px"><b>Les services.</b> Le cloud native (serverless, conteneurs, bases et files managées) remplace des serveurs qu'on installe, patche et surveille soi-même.</p>
+      <p style="margin-top:6px"><b>Le coût.</b> On paie à l'usage : chaque choix d'architecture a un prix, qui se mesure et se pilote. Une VM surdimensionnée « au cas où » coûte tous les mois.</p>
+      <p style="margin-top:6px"><b>L'élasticité et la résilience.</b> On scale à la demande et on répartit sur plusieurs zones, au lieu d'acheter du matériel pour le pic.</p>
+      <p style="margin-top:6px"><b>L'identité et le réseau.</b> Chez AWS, ce sont deux plans orthogonaux, ce qui n'existe pas (ou peu) on-prem.</p>
+      <p style="margin-top:6px"><b>L'automatisation.</b> L'infrastructure s'écrit en code : elle se versionne, se relit et se reconstruit.</p>
+      <p style="margin-top:10px">Mon rôle d'architecte cloud, c'est d'arbitrer, à chaque fois, le bon niveau : une VM quand il y a du legacy, des conteneurs, du serverless ou un service managé quand c'est plus pertinent, en pesant le besoin métier, le coût, la sécurité et l'exploitation. Pas de copier-coller de l'on-prem.</p>
     </div>
+    <div class="card tilt reveal" style="margin-bottom:18px"><div class="icon">☁️</div><h3>Connaître tous les clouds</h3><p>Aujourd'hui, AWS est l'hyperscaler le plus complet, et c'est mon socle. Mais les acteurs français comme Clever Cloud ou OVHcloud méritent d'être soutenus pour grandir. Et Azure et GCP, j'ai envie de les découvrir aussi.</p></div>
   </section>
 
   <!-- PROJETS -->
@@ -2110,7 +2117,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
       p.rotation.y = r; p.castShadow = false;
     });
     anims.push(t => { planes.rotation.y = t * .35; });
-    say(g, 2.7, '🧭 Chez AWS, l’identité et le réseau forment deux plans orthogonaux. Le cloud n’est pas un datacenter déplacé.', { card: ['pro', 'Le cloud n\'est pas un datacenter'] });
+    say(g, 2.7, '🧭 Le cloud n’est pas un datacenter déplacé : services managés, paiement à l’usage, élasticité… Mon rôle est d’arbitrer le bon niveau à chaque fois (VM, conteneurs, serverless), pas de copier-coller l’on-prem.', { card: ['pro', 'Le cloud n\'est pas un datacenter'] });
   }
   {
     const balloons = [['AWS', 0xf59e0b, '🎈 AWS : mon socle, l’hyperscaler le plus complet aujourd’hui.'], ['Clever Cloud', 0xdc2626, '🎈 Clever Cloud : un acteur français qui mérite d’être soutenu pour grandir.'], ['OVHcloud', 0x2563eb, '🎈 OVHcloud : français aussi, et à soutenir.'], ['Azure', 0x0ea5e9, '🎈 Azure : j’ai envie de le découvrir.'], ['GCP', 0x16a34a, '🎈 GCP : sur ma liste de clouds à découvrir.']];
